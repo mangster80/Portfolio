@@ -8,53 +8,21 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script type="text/javascript">
-  // $(document).ready(function(){
-  //   // Add smooth scrolling to all links
-  //   $("a").on('click', function(event) {
-  //
-  //     // Make sure this.hash has a value before overriding default behavior
-  //     if (this.hash !== "") {
-  //       // Prevent default anchor click behavior
-  //       event.preventDefault();
-  //
-  //       // Store hash
-  //       var hash = this.hash;
-  //
-  //       // Using jQuery's animate() method to add smooth page scroll
-  //       // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-  //       $('html, body').animate({
-  //         scrollTop: $(hash).offset().top
-  //       }, 1800, function(){
-  //
-  //         // Add hash (#) to URL when done scrolling (default click behavior)
-  //         window.location.hash = hash ;
-  //       });
-  //     } // End if
-  //   });
-  // });
-//   $(function() {
-//   $('a[href*=#]:not([href=#])').click(function() {
-//     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-//       var target = $(this.hash);
-//       target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-//       if (target.length) {
-//         $('html,body').animate({
-//           scrollTop: target.offset().top
-//         }, 1000);
-//         return false;
-//       }
-//     }
-//   });
-// });
-
-  </script>
+  <script src="script.js"></script>
+  <script src="zenscroll-min.js"></script>
 
   <style>
 
+  body, html {
+  height: 100vh;
+}
+/* div {
+  height:100vh;
+} */
+
   .carousel-inner > .item > img, .carousel-inner > .item > a > img {
     width: 100%;
-    height: auto;
+    height: 100vh;
   }
 
   .navbar {
@@ -145,7 +113,9 @@
       font-size: 1.7em;
     }
   }
-
+  /* .img-circle {
+  border-color: black;
+  } */
 
   </style>
   </head>
@@ -164,13 +134,14 @@
             <ul class="nav navbar-nav navbar-right">
               <li><a href="index2.html">HEM</a></li>
               <li><a href="#about">ABOUT</a></li>
-              <!-- <li><a href="#">Services</a></li> -->
+              <!-- <div class="first"><button type="button">Click Me!</button></div> -->
               <li><a href="#contact">CONTACT</a></li>
-              <!-- <li><a class="scroll" target="contact">Contact</a></li> -->
+              <a href="#myAnchor" rel="" id="anchor1" class="anchorLink">Link to the anchor</a>
             </ul>
           </div>
       </div>
     </nav>
+    <section>
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
           <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -183,7 +154,8 @@
           <div class="carousel-caption">
             <h1>Magnus Wallin</h1>
             <br>
-            <!-- <button type="button" class="btn btn-default">MY WORK</button> -->
+            <div class="first"><button type="button">Click Me!</button></div>
+            <div class="second">Hi</div>
           </div>
           </div>
           <div class="item">
@@ -202,8 +174,10 @@
         <span class="sr-only">Next</span>
         </a>
     </div>
+    </section>
+    <section>
 
-    <div class="container text-center">
+    <div class="container text-center" id="about">
       <!-- <a name="myAnchor" id="myAnchor"><strong>Where i want to go</strong></a> -->
       <h2>What I'm Using</h2>
       <div class="row">
@@ -239,30 +213,27 @@
         </div>
       </div>
     </div>
+    </section>
+    <a name="myAnchor" id="myAnchor"><strong>Where i want to go</strong></a><br>
     <div class="container">
       <div class="row">
         <div class="col-md-6">
           <h4><a href="#hidden" data-toggle="collapse">Here's some information about me...</a></h4>
           <div id="hidden" class="collapse">
-            <h4>Here's the cool thing about Bootstrap...</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-              ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-              ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-              pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-              ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-              aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-              pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum.</p>
+            <h4>Hi...</h4>
+            <p>Welcome to my project</p>
+            <p>My name is Magnus Wallin and I'm a first year student at KYH in
+               Stockholm, this page represents some of the things I've learned
+               so far, and it will continue to grow and I'll be adding more
+                things as I learn.</p>
+            <p>The first thing I wanted was the site to be as responsive as
+               possible so I’ve used the Twitter Bootstrap framework, later on
+               I’ll also be using Facebook React framework.</p>
+               <p>If you want to contact me you can find me on social media or send me an e-mail. :)</p>
           </div>
         </div>
         <div class="col-md-6">
-          <img src="img/profilsmall.png" class="img-responsive" alt="avatar">
+          <img src="img/profilsmall.png" class="img-circle" alt="avatar">
           <!-- <img src="img/bootstrap2.jpg" class="img-responsive" alt="bootstrap"> -->
         </div>
       </div>
